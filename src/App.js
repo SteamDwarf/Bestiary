@@ -1,25 +1,74 @@
-import logo from './logo.svg';
+import { Component } from 'react';
 import './App.css';
+import CardList from './components/card-list/card-list.component';
+import SearchInput from './components/search-input/search-input.component';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//Каждый классовый компонент, должен наследоваться от клсса Component
+class App extends Component {
+
+  //Конструктор, необходимый для создания состояний
+  constructor() {
+    super();
+
+    this.state = {
+      allBeastes: [],
+      showingBeastes: [],
+      beastesImage: [],
+      filter: ''
+    }
+  }
+
+  //Должны получить изображения с сервера
+  componentDidMount() {
+    this.fetchBeastes();
+    this.fetchBeastesImage();
+  }
+
+  fetchBeastes() {
+    fetch("http://localhost:5000/beastes")
+      .then(response => response.json())
+      .then(json => this.setState({allBeastes: json, showingBeastes: json}));
+  }
+
+  fetchBeastesImage() {
+    fetch("http://localhost:5000/beastes-image")
+      .then(response => response.json())
+      .then(json => this.setState(() => {return {beastesImage: json}}, () => console.log(this.state)));
+  }
+
+  onSearchChange = (e) => {
+    this.setState(() => {return {filter: e.target.value}},
+    () => {
+      let filteredBeastes = this.getFilteredBeasted();
+      this.setState({showingBeastes: filteredBeastes});
+    });
+  }
+
+  getFilteredBeasted() {
+    let filteredBeastes = this.state.allBeastes.filter((beast) => {
+      return beast.name.toLowerCase().includes(this.state.filter.toLowerCase());
+    })
+
+    return filteredBeastes;
+  }
+
+  //Данный метод рендерит возвращаемый JSX код
+  render() {
+    let {filter, showingBeastes} = this.state;
+    let {onSearchChange} = this;
+
+    return (
+      <div className="App">
+        <div className='app-title'>Fantastic beastes</div>
+        <SearchInput 
+          className="beastes-search-input"
+          value={filter}
+          onChange={onSearchChange}
+        />
+        <CardList cards={showingBeastes}/>
+      </div>
+    );
+  }
 }
 
 export default App;

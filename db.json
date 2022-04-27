@@ -1,0 +1,30 @@
+{
+    "beastes": [
+        {
+            "id": 0, 
+            "name": "Augurey, Irish Phoenix"
+        },
+        {
+            "id": 1, 
+            "name": "Jobberknoll"
+        },
+        {
+            "id": 2, 
+            "name": "Basilisk"
+        }
+    ],
+    "beastes-image": [
+        {
+            "id": 0, 
+            "src": "./src/assets/cards-images/Augurey.jpg"
+        },
+        {
+            "id": 1, 
+            "src": "./src/assets/cards-images/Augurey.jpg"
+        },
+        {
+            "id": 2, 
+            "src": "./src/assets/cards-images/Augurey.jpg"
+        }
+    ]
+}
