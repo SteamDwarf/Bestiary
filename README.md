@@ -2,4 +2,4 @@
 
 Приложение в котором отображаются карточки существ. Компоненты используют классовый подход.
 
-![Илюстрация проекта] (https://gitflic.ru/project/steamdwarf/monster-relodex/raw/master/Previewe.png)
+![Илюстрация проекта] (https://gitflic.ru/project/steamdwarf/monster-relodex/master/Previewe.png)
