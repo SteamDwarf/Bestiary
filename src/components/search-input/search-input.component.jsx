@@ -4,7 +4,7 @@ import './search-input.styles.css';
 class SearchInput extends Component {
     
     render() {
-        let {value, onChange} = this.props;
+        let {value, onChange, placeholder} = this.props;
 
         return (
             <input 
@@ -12,6 +12,7 @@ class SearchInput extends Component {
                 type='search'
                 value={value}
                 onChange={onChange}
+                placeholder={placeholder}
             />
         );
     }

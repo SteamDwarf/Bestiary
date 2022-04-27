@@ -14,8 +14,9 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 100vh;
-  background: no-repeat center/cover url(./assets/background.jpg) ;
+  min-height: 100vh;
+  height: 100%;
+  background: fixed center/cover url(./assets/background.jpg) ;
 }
 
 .app-title {

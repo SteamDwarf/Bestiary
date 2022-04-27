@@ -9,11 +9,12 @@ class CardList extends Component {
 
         return (
             <div className='card-list'>
-                {cards.map((beast) => 
+                {cards.map((card) => 
                     <Card 
-                        key={beast.id} 
-                        title={beast.name}
-                        imageSrc={beast.imageSrc}
+                        key={card.id} 
+                        title={card.name}
+                        imageSrc={card.imageSrc}
+                        describe={card.describe}
                     />)}
             </div>  
         );

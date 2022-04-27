@@ -13,7 +13,6 @@ class App extends Component {
     this.state = {
       allBeastes: [],
       showingBeastes: [],
-      beastesImage: [],
       filter: ''
     }
   }
@@ -21,19 +20,12 @@ class App extends Component {
   //Должны получить изображения с сервера
   componentDidMount() {
     this.fetchBeastes();
-    this.fetchBeastesImage();
   }
 
   fetchBeastes() {
     fetch("http://localhost:5000/beastes")
       .then(response => response.json())
       .then(json => this.setState({allBeastes: json, showingBeastes: json}));
-  }
-
-  fetchBeastesImage() {
-    fetch("http://localhost:5000/beastes-image")
-      .then(response => response.json())
-      .then(json => this.setState(() => {return {beastesImage: json}}, () => console.log(this.state)));
   }
 
   onSearchChange = (e) => {
@@ -64,6 +56,7 @@ class App extends Component {
           className="beastes-search-input"
           value={filter}
           onChange={onSearchChange}
+          placeholder='Поиск существa'
         />
         <CardList cards={showingBeastes}/>
       </div>

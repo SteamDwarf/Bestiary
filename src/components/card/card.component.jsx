@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
+import './card.styles.css';
 
 class Card extends Component {
     
     render() {
-        let {title, imageSrc} = this.props;
-        console.log(imageSrc);
+        let {title, imageSrc, describe} = this.props;
+
         return (
-            <div>
-                <h1>{title}</h1>
-                <img src={"https://robohash.org/55"} alt={`${title}`} />
+            <div className='card'>
+                <img className='card_image' src={imageSrc} alt={`${title}`} />
+                <h3 className='card_title'>{title}</h3>
+                <p className='card_describe'>{describe}</p>
             </div>
         );
     }
