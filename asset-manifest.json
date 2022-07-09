@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Bestiary/static/css/main.f499d198.css",
-    "main.js": "/Bestiary/static/js/main.5ddeec0b.js",
+    "main.css": "/Bestiary/static/css/main.fd4ca176.css",
+    "main.js": "/Bestiary/static/js/main.4362d833.js",
     "static/js/787.0962bb32.chunk.js": "/Bestiary/static/js/787.0962bb32.chunk.js",
     "static/media/background.jpg": "/Bestiary/static/media/background.68bbb374c5953c557aa6.jpg",
     "static/media/AmidalafontRegular.otf": "/Bestiary/static/media/AmidalafontRegular.55d092cbb29574b2f405.otf",
     "index.html": "/Bestiary/index.html",
-    "main.f499d198.css.map": "/Bestiary/static/css/main.f499d198.css.map",
-    "main.5ddeec0b.js.map": "/Bestiary/static/js/main.5ddeec0b.js.map",
+    "main.fd4ca176.css.map": "/Bestiary/static/css/main.fd4ca176.css.map",
+    "main.4362d833.js.map": "/Bestiary/static/js/main.4362d833.js.map",
     "787.0962bb32.chunk.js.map": "/Bestiary/static/js/787.0962bb32.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f499d198.css",
-    "static/js/main.5ddeec0b.js"
+    "static/css/main.fd4ca176.css",
+    "static/js/main.4362d833.js"
   ]
 }
