@@ -23,9 +23,13 @@ class App extends Component {
   }
 
   fetchBeastes() {
-    fetch("http://localhost:5000/beastes")
-      .then(response => response.json())
-      .then(json => this.setState({allBeastes: json, showingBeastes: json}));
+    fetch(`${process.env.PUBLIC_URL}/db.json`)
+      .then(response => response.ok ? response.json() : Promise.reject())
+      .then(data => {
+        console.log(data)
+        this.setState({allBeastes: data.beastes, showingBeastes: data.beastes})
+      })
+      .catch(error => console.error(error));
   }
 
   onSearchChange = (e) => {
@@ -48,10 +52,10 @@ class App extends Component {
   render() {
     let {filter, showingBeastes} = this.state;
     let {onSearchChange} = this;
-
+    
     return (
       <div className="App">
-        <div className='app-title'>Fantastic beastes</div>
+        <h1 className='app-title'>Fantastic beastes</h1>
         <SearchInput 
           className="beastes-search-input"
           value={filter}

@@ -23,4 +23,12 @@
   margin-top: 50px;
   color: #dea302;
   font: 100px "Amidala", fantasy;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+
+  .app-title {
+    font-size: 50px;
+  }
 }
